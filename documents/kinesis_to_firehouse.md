@@ -31,13 +31,19 @@
 
 The first thing we have to do is to create an S3 bucket that we will be using to ingest the data. From the S3 dashboard → Create bucket:
 
+<img src="../images/kinesis_to_firehose/image_2.png" alt="Architecture Diagram" width="600">
+
 We can leave all other parameters as default. In the end, we can click on **Create bucket** (`kinesis-stream-csv-from-ec2-bucket`).
 
 ## IAM Role
 
 We are going to create an IAM role that will give our EC2 instance permission to access Amazon Kinesis. Therefore, we can choose EC2 as the use case.
 
+<img src="../images/kinesis_to_firehose/image_3.png" alt="Architecture Diagram" width="600">
+
 We are going to choose **AmazonKinesisFullAccess** as the role. It's not a best practice, but since this is a practical guide, we can choose this role. We should, instead, create a dedicated JSON for the specific streams. In the end, we can give it the name `ec2-kinesis-full-access`.
+
+<img src="../images/kinesis_to_firehose/image_4.png" alt="Architecture Diagram" width="600">
 
 ## EC2 Instance
 
@@ -49,8 +55,9 @@ We should then create the dedicated EC2 instance with the following parameters:
 - **Network settings** → Select the existing security group and we can select the one we created (It should include SSH connection as an inbound rule)
 - We should choose the IAM role we lately created
 - **Name:** send-csv-to-kinesis-ec2-instance
+- We can leave other fields as default and launch the instance.
 
-We can leave other fields as default and launch the instance.
+<img src="../images/kinesis_to_firehose/image_5.png" alt="Architecture Diagram" width="600">
 
 ## Kinesis Data Streams
 
@@ -58,11 +65,15 @@ Amazon Kinesis → Data streams → Create data stream
 
 We can choose **On-demand** or **Provisioned** with one shard since we will need only one shard for this project (We are going to use a hard-coded partition key. That's why we need one shard only.). We can name the Stream as `streaming-ec2-csv`.
 
+<img src="../images/kinesis_to_firehose/image_6.png" alt="Architecture Diagram" width="600">
+
 We can then click on **Create Data Stream**.
 
 ## Kinesis Firehose
 
 When it comes to the Firehose, we have to select the source as **Data Streams** and the destination as **Amazon S3**. We have to populate our Data Stream name for the Source settings. We can name our Delivery stream name as `firehose-streams-to-s3`.
+
+<img src="../images/kinesis_to_firehose/image_7.png" alt="Architecture Diagram" width="600">
 
 ### Source Settings
 
