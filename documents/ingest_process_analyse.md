@@ -2,6 +2,8 @@
 
 ## AWS Glue, Lambda, Kinesis, Redshift, Athena, QuickSight, S3, EC2, Spark
 
+<img src="../images/ingest_process_analyse/image_1.png" alt="Architecture Diagram" width="600">
+
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline)
 
 ---
@@ -147,13 +149,19 @@ def main():
 
 The first thing we have to do is to create an S3 bucket. We are going to use this bucket for Firehose to upload the data. From the S3 dashboard → Create bucket:
 
+<img src="../images/ingest_process_analyse/image_2.png" alt="Architecture Diagram" width="600">
+
 We can leave all other parameters as default. In the end, we can click on **Create bucket** (`kinesis-firehose-books-json-dogukan-ulu`).
 
 ## IAM Role
 
 We are going to create an IAM role that will give our EC2 instance the necessary permissions to access Amazon Kinesis. Therefore, we can choose EC2 as the use case.
 
+<img src="../images/ingest_process_analyse/image_3.png" alt="Architecture Diagram" width="600">
+
 We are going to choose **AmazonKinesisFullAccess** as the role. It's not a best practice, but since this is a practical guide, we can choose this role. We should, instead, create a dedicated JSON for the specific streams. In the end, we can give it the name `ec2-kinesis-full-access`.
+
+<img src="../images/ingest_process_analyse/image_4.png" alt="Architecture Diagram" width="600">
 
 ## EC2 Instance
 
@@ -165,8 +173,9 @@ We should then create the dedicated EC2 instance with the following parameters:
 - **Network settings** → Select a suitable security group. (It should include SSH connection as the inbound rule)
 - We should choose the IAM role we recently created
 - **Name:** json-to-kinesis-streams-ec2-instance
+- We can leave other fields as default and launch the instance.
 
-We can leave other fields as default and launch the instance.
+<img src="../images/ingest_process_analyse/image_5.png" alt="Architecture Diagram" width="600">
 
 ## Kinesis Data Streams
 
@@ -174,15 +183,23 @@ Amazon Kinesis → Data streams → Create data stream
 
 We are going to choose **Provisioned** with one shard since we will need only one shard for this project (We are going to use a hard-coded partition key. That's why we need one shard only). We can name the Stream as `json-to-kinesis-streams-dogukan-ulu`. This part is important since our script will be using this name. If we want to name our data stream differently, we should also modify the upcoming shell script accordingly.
 
+<img src="../images/ingest_process_analyse/image_6.png" alt="Architecture Diagram" width="600">
+
 We can then click on **Create Data Stream**.
 
 ## Kinesis Firehose
 
 When it comes to the Firehose, we have to select the source as **Data Streams** and the destination as **Amazon S3**. We have to populate our Data Stream name (`json-to-kinesis-streams-dogukan-ulu`) for the Source settings. We can name our Delivery stream name as `json-to-kinesis-firehose-dogukan-ulu`.
 
+<img src="../images/ingest_process_analyse/image_7.png" alt="Architecture Diagram" width="600">
+
+<img src="../images/ingest_process_analyse/image_8.png" alt="Architecture Diagram" width="600">
+
 ### Destination Settings
 
 When it comes to Destination settings, we can choose the S3 bucket we recently created. Data will be uploaded into the prefixes like `year/month/day/hour`. We better define the additional prefix as `json_data/` so that our data will be uploaded into that directory.
+
+<img src="../images/ingest_process_analyse/image_9.png" alt="Architecture Diagram" width="600">
 
 ### Buffer Configuration
 
@@ -291,6 +308,9 @@ We may change all the command line arguments depending on our use case.
 
 **For related articles:**
 - [How to Automate Data Streaming to Amazon Kinesis Data Streams](https://medium.com/@dogukannulu/how-to-automate-data-streaming-to-amazon-kinesis-data-streams)
+
+For a very similar process for remote CSV files, you can take a look at the below article.
+
 - [How to Stream CSV Data from Amazon Kinesis Data Streams to S3 Through Firehose](https://medium.com/@dogukannulu/how-to-stream-csv-data-from-amazon-kinesis-data-streams-to-s3-through-firehose)
 
 ## Python Script
@@ -395,6 +415,8 @@ if __name__ == "__main__":
 
 Once we run the shell script, we will start seeing each log on the command line of the EC2 instance. We can see that the time interval is 1 second between two logs as we defined in the shell script.
 
+<img src="../images/ingest_process_analyse/image_10.png" alt="Architecture Diagram" width="600">
+
 The long number on the right-hand side will be the sequence number.
 
 > A Kinesis data stream is a set of shards. Each shard has a sequence of data records. Each data record has a sequence number that is assigned by Kinesis Data Streams (Amazon Web Services).
@@ -403,9 +425,13 @@ The long number on the right-hand side will be the sequence number.
 
 We can check the data on the Kinesis Data Streams dashboard by choosing **Trim Horizon** and getting the data from our shard. Since we have only one shard, we can choose that one.
 
+<img src="../images/ingest_process_analyse/image_11.png" alt="Architecture Diagram" width="600">
+
 ### Check S3 Bucket
 
 We can also check the S3 bucket. We determined the buffer time limit as 60 seconds for Firehose. We are going to send the data every second and 60 records in total. It will take 1 minute in total to write the whole data. Therefore, there should be one single file for the written data as we can see below. You may also see the prefixes of the data which show `year/month/day/hour` breakdown. The file name will be determined due to the Delivery Stream name and date. You may also check the prefix `json_data/`.
+
+<img src="../images/ingest_process_analyse/image_12.png" alt="Architecture Diagram" width="600">
 
 We can select the file and download that to our local to check how its content is designed. In the end, we will be able to see the combined JSON data with our favorite text editor. You can see the [sample Firehose JSON data here](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline/tree/main/json_to_kinesis_streams).
 
@@ -414,7 +440,3 @@ We can select the file and download that to our local to check how its content i
 If everything seems correct up until this point, we can move on to the next section: **Data processing**. We are going to run these steps again since we want to trigger the upcoming Lambda function with the S3 object upload.
 
 ---
-
-Hope it helps, thanks for reading! 🕺
-
-You may reach out via [GitHub](https://github.com/dogukannulu), all comments are appreciated!
