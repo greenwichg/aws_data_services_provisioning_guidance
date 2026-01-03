@@ -242,6 +242,8 @@ send_csv_to_kinesis(args.stream_name, args.interval, args.max_rows)
 
 Once we run the shell script, we will start seeing each write's log on the command line of the EC2 instance. We can see that the time interval is 2 seconds between two writes as we defined in the shell script.
 
+<img src="../images/kinesis_to_firehose/image_9.png" alt="Architecture Diagram" width="600">
+
 The long number at the right-hand side is the sequence number.
 
 > A Kinesis data stream is a set of shards. Each shard has a sequence of data records. Each data record has a sequence number that is assigned by Kinesis Data Streams (Amazon Web Services).
@@ -250,13 +252,21 @@ The long number at the right-hand side is the sequence number.
 
 We are going to see the partition keys of each species on the Data Streams dashboard. We can check if so on the Kinesis Data Streams dashboard by choosing **Trim Horizon** and getting the data from the shard. We should check to which shard our data was written (if we use On-demand mode) and adjust that shard to obtain the results.
 
+<img src="../images/kinesis_to_firehose/image_10.png" alt="Architecture Diagram" width="600">
+
 ### Partition Key Benefits
 
 The good part of the partition key is that we can sort the records by partition key and can see each species data ordered and separated.
 
+<img src="../images/kinesis_to_firehose/image_11.png" alt="Architecture Diagram" width="600">
+
 ### Check S3 Bucket
 
-We can also check the S3 bucket. We determined the buffer time limit as 60 seconds for Firehose. We are going to send the data every 2 seconds and 60 rows in total. It will take 2 minutes in total to write the whole data. Therefore, there should be 2 separate files for the written data as we can see below. If there are more than 2 files, it is probably because of the time differences during the delivery. You may also see the prefixes of the data which show `year/month/day/hour`. The file name will be determined due to the Delivery Stream name and date.
+We can also check the S3 bucket. We determined the buffer time limit as 60 seconds for Firehose. We are going to send the data every 2 seconds and 60 rows in total. It will take 2 minutes in total to write the whole data. **Therefore, there should be 2 separate files for the written data as we can see below.** If there are more than 2 files, it is probably because of the time differences during the delivery. You may also see the prefixes of the data which show `year/month/day/hour`. The file name will be determined due to the Delivery Stream name and date.
+
+<img src="../images/kinesis_to_firehose/image_12.png" alt="Architecture Diagram" width="600">
+
+<img src="../images/kinesis_to_firehose/image_13.png" alt="Architecture Diagram" width="600">
 
 We can select each of the files and download them to our local. In the end, we will be able to see CSV data with our favorite text editor.
 
