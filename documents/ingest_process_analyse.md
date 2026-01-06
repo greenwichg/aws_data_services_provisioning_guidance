@@ -117,7 +117,7 @@ def scrape_books(self, url):
 
 ### Main Function
 
-In the main function, we will combine the previous functions. In the end, we will create a JSON file. Each record in this JSON file will include 5 keys, which means that we will have a 5-column data frame in the end.
+In the main function, we will combine the previous functions. In the end, we will create a [JSON file](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline/blob/main/web_scraping/books_data.json). Each record in this JSON file will include 5 keys, which means that we will have a 5-column data frame in the end.
 
 ```python
 def main():
