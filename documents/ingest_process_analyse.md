@@ -228,7 +228,7 @@ sudo tail -f /project/json_to_kinesis_streams.log
 
 ### Shell Script Overview
 
-We will download the remote zip file (it includes the Python script and `requirements.txt`) ourselves. The `setup.sh` script will install pip3, python3, and wget first, and run the Python script that will send the JSON data record by record to Kinesis Data Streams for a predefined time interval. You may see the content of the script below. Each section's purpose is written with comments.
+We will download the remote zip file (it includes the [Python script](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline/blob/main/json_to_kinesis_streams/json_to_kinesis_streams.py) and [requirements.txt](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/blob/main/json_to_kinesis_streams/requirements.txt)) ourselves. The [setup.sh](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/blob/main/json_to_kinesis_streams/setup.sh) script will install pip3, python3, and wget first, and run the Python script that will send the JSON data record by record to Kinesis Data Streams for a predefined time interval. You may see the content of the script below. Each section's purpose is written with comments.
 
 ```bash
 #!/bin/bash
