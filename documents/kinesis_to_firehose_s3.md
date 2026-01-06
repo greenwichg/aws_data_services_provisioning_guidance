@@ -168,7 +168,7 @@ def define_arguments():
 ```
 
 **Arguments:**
-- **stream_name**: We are going to define the stream name (`streaming-ec2-csv` for this project)
+- **stream_name**: We are going to define the stream name (**`streaming-ec2-csv`** for this project)
 - **interval**: We have to define it as an integer. This will determine how many seconds will be required between two writes
 - **max_rows**: How many rows do we want to write to the stream? Should be defined as an integer
 
@@ -189,7 +189,7 @@ def determine_partition_key(species):
     return partition_key_mapping.get(species, 'unknown')
 ```
 
-If the species doesn't exist in the JSON, the partition key will be `unknown`.
+If the species doesn't exist in the JSON, the partition key will be **`unknown`**.
 
 ### Send CSV to Kinesis
 
@@ -271,5 +271,3 @@ We can also check the S3 bucket. We determined the buffer time limit as 60 secon
 We can select each of the files and download them to our local. In the end, we will be able to see CSV data with our favorite text editor.
 
 ---
-
-Hope it helps, thanks for reading!
