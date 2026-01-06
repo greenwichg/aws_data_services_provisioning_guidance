@@ -103,7 +103,7 @@ class KinesisStreamer:
 
 We are now going to define the command line arguments:
 
-- **stream_name** (str): The stream name we already created in the previous steps (`csv-to-kinesis-streams-dogukan-ulu` for this use case)
+- **stream_name** (str): The stream name we already created in the previous steps (**`csv-to-kinesis-streams-dogukan-ulu`** for this use case)
 - **interval** (int): The time interval between two-row uploads
 - **max_rows** (int): The maximum number of rows that will be written into the Kinesis stream
 - **csv_url** (str): URL of the CSV file
