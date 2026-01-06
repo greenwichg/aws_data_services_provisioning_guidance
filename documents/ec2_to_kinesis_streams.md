@@ -208,7 +208,7 @@ install_packages() {
 
 ### Unzip Files
 
-We are going to start the main process after getting the machine ready. We are going to download the zip file manually which will be explained later. This zip file includes the Python script and requirements.txt. Then, we will unzip the downloaded zip file.
+We are going to start the main process after getting the machine ready. We are going to download the [zip file](https://github.com/greenwichg/send_data_to_aws_services/blob/main/csv_to_kinesis_streams/csv_to_kinesis_streams.zip) manually which will be explained later. This zip file includes the [Python script](https://github.com/greenwichg/send_data_to_aws_services/blob/main/csv_to_kinesis_streams/csv_to_kinesis_streams.py) and [requirements.txt](https://github.com/greenwichg/send_data_to_aws_services/blob/main/csv_to_kinesis_streams/requirements.txt). Then, we will unzip the downloaded zip file.
 
 ```bash
 # Function to unzip the files
