@@ -2,7 +2,7 @@
 
 <img src="../images/ec2_to_s3/image_1.png" alt="Architecture Diagram" width="600">
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/dogukannulu/send_data_to_aws_services/tree/main/csv_to_s3)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/greenwichg/send_data_to_aws_services/tree/main/csv_to_s3)
 
 ---
 
