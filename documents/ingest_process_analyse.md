@@ -1,6 +1,4 @@
-# AWS Cloud Engineering Project — Part 1
-
-## AWS Glue, Lambda, Kinesis, Redshift, Athena, QuickSight, S3, EC2, Spark
+# AWS Cloud Engineering Project — Part 1— AWS Glue, Lambda, Kinesis, Redshift, Athena, QuickSight, S3, EC2, Spark
 
 <img src="../images/ingest_process_analyse/image_1.png" alt="Architecture Diagram" width="600">
 
