@@ -55,7 +55,7 @@ We can then click on **Create Data Stream**.
 
 ## Python Script
 
-We will be using [this CSV file](https://raw.githubusercontent.com/dogukannulu/send_data_to_aws_services/main/csv_to_kinesis_streams/dirty_store_transactions.csv) as an example for the whole process. If you want to use any other URL for the CSV file, you can modify the shell script which will be explained in the next section. You can also see the requirements.txt file which will be automatically installed into the EC2 instance via shell script later.
+We will be using [this CSV file](https://github.com/greenwichg/send_data_to_aws_services/blob/main/csv_to_kinesis_streams/dirty_store_transactions.csv) as an example for the whole process. If you want to use any other URL for the CSV file, you can modify the shell script which will be explained in the next section. You can also see the requirements.txt file which will be automatically installed into the EC2 instance via shell script later.
 
 ### Import Libraries and Setup Logger
 
