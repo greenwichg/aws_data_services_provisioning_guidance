@@ -1,4 +1,4 @@
-# CSV to Kinesis Data Streams - Complete Guide
+# How to Automate Data Streaming to Amazon Kinesis Data Streams
 
 <img src="../images/ec2_to_kinesis/image_1.png" alt="Architecture Diagram" width="600">
 
