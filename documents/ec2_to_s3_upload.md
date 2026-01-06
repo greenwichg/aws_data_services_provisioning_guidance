@@ -231,7 +231,7 @@ install_python_libraries() {
 
 ### Execute Python Script
 
-Here comes the main part. We are going to define all the command line arguments in the below function. Then, we will run the Python script with those arguments. This part might be modified if necessary.
+Here comes the main part. We are going to define all the command line arguments in the below function. Then, we will run the Python script with those arguments. *This part might be modified if necessary*.
 
 ```bash
 # Function to execute the Python script
