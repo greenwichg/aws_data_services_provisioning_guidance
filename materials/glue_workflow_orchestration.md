@@ -57,7 +57,7 @@ We have to create our Glue ETL job with any suitable option for our use case. We
 
 <img src="../images/glue_workflow/image_4.png" alt="Architecture Diagram" width="600">
 
-You may find a [sample Glue ETL job Spark Script here](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3). We have to decide the number of DPUs and worker types accordingly. After creating the script of our job, we can save it with a proper name. 
+You may find a [sample Glue ETL job Spark Script here](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/glue_jobs/glue_etl_job_spark_script.py). We have to decide the number of DPUs and worker types accordingly. After creating the script of our job, we can save it with a proper name. 
 
 In the end, we have a Crawler and a Glue ETL Job. We can now create the workflow.
 
