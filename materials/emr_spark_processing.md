@@ -1,4 +1,4 @@
-# AWS Cloud Data Engineering End-to-End Project — EMR, EC2, Glue, S3, Spark, Zeppelin 
+# AWS Cloud Data Engineering End-to-End Project — EMR, EC2, Glue, S3, Spark, Zeppelin
 
 <img src="../images/aws_ingestion_emr/image_1.png" alt="Architecture Diagram" width="600">
 
