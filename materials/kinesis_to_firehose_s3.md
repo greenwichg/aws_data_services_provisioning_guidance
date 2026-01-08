@@ -129,7 +129,7 @@ python3 data_streams.py --stream_name streaming-ec2-csv --interval 2 --max_rows 
 
 We may change the `interval` and `max_rows` command line arguments depending on your use case. Remember that the script will only work for iris.csv.
 
-For a broader process that will be valid for all remote CSV files, you may see the article: [How to Automate Data Streaming to Amazon Kinesis Data Streams](https://github.com/greenwichg/aws_data_services_guidance/blob/main/documents/ec2_to_kinesis_streams.md)
+For a broader process that will be valid for all remote CSV files, you may see the article: [How to Automate Data Streaming to Amazon Kinesis Data Streams](https://github.com/greenwichg/aws_data_services_guidance/blob/main/materials/ec2_to_kinesis_streams.md)
 
 ## Python Script
 
