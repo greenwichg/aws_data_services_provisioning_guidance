@@ -89,7 +89,7 @@ We will choose the cluster instance size as **1** for this specific project.
 
 We can choose the default VPC or we can also create a specific VPC for this use case. We can also choose private/public subnet. Since this is a demo project, we can choose a public subnet. But I definitely recommend choosing a private subnet for production use. 
 
-If you want to have more information about establishing a VPC, you may see the article: [Establishing a VPC for Amazon S3, Lambda, RDS and EC2](https://medium.com/@dogukannulu/establishing-a-vpc-for-amazon-s3-lambda-rds-and-ec2).
+If you want to have more information about establishing a VPC, you may see the article: [Establishing a VPC for Amazon S3, Lambda, RDS and EC2](https://medium.com/@dogukannulu/establishing-a-vpc-for-amazon-s3-lambda-rds-and-ec2-8f3aa53b5429).
 
 <img src="../images/aws_ingestion_emr/image_9.png" alt="Architecture Diagram" width="600">
 
