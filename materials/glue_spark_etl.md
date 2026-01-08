@@ -60,7 +60,7 @@ We can give a certain name for our newly created role as well.
 
 ## S3 Bucket
 
-After creating the necessary IAM role, we should create the S3 bucket. This bucket will be used both to get the initial data and upload the final data. If we want to upload the data automatically from inside the EC2 instance, all details can be found in the article: [How to Automate Data Upload to Amazon S3](https://medium.com/@dogukannulu/how-to-automate-data-upload-to-amazon-s3).
+After creating the necessary IAM role, we should create the S3 bucket. This bucket will be used both to get the initial data and upload the final data. If we want to upload the data automatically from inside the EC2 instance, all details can be found in the article: [How to Automate Data Upload to Amazon S3](https://github.com/greenwichg/aws_data_services_guide/blob/main/materials/ec2_to_s3_upload.md).
 
 If we want to create the S3 bucket manually, we can do it via the S3 dashboard directly and upload the CSV file using AWS CLI. For this article, we will be using a bucket named `aws-glue-etl-job-spark`. This part is important since the bucket name should include "aws-glue", if not we should define some other permissions. We will upload our initial CSV file into this bucket with the key `ufo_reports_source_csv/uforeports.csv`. We are going to use this file as our main source of data.
 
