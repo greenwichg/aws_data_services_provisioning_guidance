@@ -44,9 +44,9 @@ We can think of this project as a complete streaming pipeline. We are going to g
 
 ## Web Scraping
 
-📂 [View web scraping code on GitHub](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline/tree/main/web_scraping)
+📂 [View web scraping code on GitHub](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/tree/main/web_scraping)
 
-First of all, we should install all the necessary dependencies in the [requirements.txt](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/tree/main/web_scraping) file. We will now go through the scraping script.
+First of all, we should install all the necessary dependencies in the [requirements.txt](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/blob/main/web_scraping/requirements.txt) file. We will now go through the scraping script.
 
 ### Extract Book Details
 
