@@ -257,7 +257,7 @@ After populating the script page as above, we can now **Save** the script and **
 
 ## Glue ETL Job Using Jupyter Notebook
 
-📂 [View Jupyter Notebook on GitHub](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/blob/main/glue_jobs/glue_etl_job_spark_notebook.ipynb)
+📂 [View Jupyter Notebook on GitHub](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/glue_jobs/glue_etl_job_spark_notebook.ipynb)
 
 One of the other options is creating the ETL job using a Jupyter Notebook. The steps are pretty similar to the Spark script. Therefore, there's no need to go through the Jupyter Notebook code itself. 
 
